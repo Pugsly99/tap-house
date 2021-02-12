@@ -80,7 +80,7 @@ class SharedView extends React.Component {
     return (
       <>
         <button onClick = {this.listClick}> List of Kegs </button>
-        <button onCLick = {this.newKegClick}> Create new Item </button>
+        <button onClick = {this.newKegClick}> Create new Item </button>
         {currentlyVisibleState}
       </>
     );

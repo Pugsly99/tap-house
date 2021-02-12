@@ -24,28 +24,28 @@ function NewKegForm(props){
         <input
           type = "text"
           name = "Alcohol Content"
-          placeholder = "$0.00"
+          placeholder = "0"
           required/>
         <input
-          type='number'
-          name='quantity'
-          placeholder="0"
-          min='0'
+          type = 'number'
+          name = 'quantity'
+          placeholder = "0"
+          min = '0'
           required />
-        <button type='submit'>Create New Keg</button>
+        <button type = 'submit'>Create New Keg</button>
       </form>
     </>
   );
 
   function handleNewKegFormSubmission(event) {
     event.preventDefault();
-    props.onNewFormCreation({name: event.target.name.value, brand: event.target.brand.value, price: event.target.price.value, alcoholContent: event.target.alcoholContent.value, quantity: parseInt(event.target.quantity.value), id: v4()
+    props.onNewKegCreation({name: event.target.name.value, brand: event.target.brand.value, price: event.target.price.value, alcoholContent: event.target.alcoholContent.value, quantity: parseInt(event.target.quantity.value), id: v4()
     });
   }
 }
 
 NewKegForm.propTypes = {
   onNewKegCreation: PropTypes.func
-}
+};
 
 export default NewKegForm;
