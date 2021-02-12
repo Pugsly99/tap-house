@@ -48,7 +48,7 @@ class SharedView extends React.Component {
 
   handleChangingSelectedKeg = (id) => {
     const selectedKeg = this.state.masterKegList.filter(keg => keg.id === id)[0];
-    this.setstate({selectedKeg: selectedKeg});
+    this.setState({selectedKeg: selectedKeg});
   }
 
   handleRestock = () => {
