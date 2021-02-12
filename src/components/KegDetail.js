@@ -4,9 +4,9 @@ import PropTypes from "prop-types";
 function KegDetail(props){
   const { keg } = props;
   let stockMessage;
-  if (keg.quantity > 5){
+  if (keg.quantity > 10){
     stockMessage = keg.quantity;
-  }else if (keg.quantity <= 5 && keg.quantity > 0){
+  }else if (keg.quantity <= 10 && keg.quantity > 0){
     stockMessage = "Only" + " " + keg.quantity + " " + "Left";
   }else {
     stockMessage = "Out of";
