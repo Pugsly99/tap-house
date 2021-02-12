@@ -23,7 +23,7 @@ function NewKegForm(props){
           required/>
         <input
           type = "text"
-          name = "Alcohol Content"
+          name = "alcoholContent"
           placeholder = "0"
           required/>
         <input

@@ -3,14 +3,14 @@ import PropTypes from "prop-types";
 
 function KegDetail(props){
   const { keg } = props;
-  let stockMessage;
-  if (keg.quantity > 5){
-    stockMessage = keg.quantity;
-  }else if (keg.quantity <= 5 && keg.quantity > 0){
-    stockMessage = "Only" + keg.quantity + "Left";
-  }else {
-    stockMessage = "Out of Stock";
-  }
+  // let stockMessage;
+  // if (keg.quantity > 5){
+  //   stockMessage = keg.quantity;
+  // }else if (keg.quantity <= 5 && keg.quantity > 0){
+  //   stockMessage = "Only" + keg.quantity + "Left";
+  // }else {
+  //   stockMessage = "Out of Stock";
+  // }
 
   return (
     <>
