@@ -5,6 +5,8 @@ import SharedView from "./SharedView";
 function App() {
   return (
   <>
+    <Header />
+    {/* <SharedView /> */}
   </>
   );
 }
