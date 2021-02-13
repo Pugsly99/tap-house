@@ -73,10 +73,10 @@ class SharedView extends React.Component {
 
   render(){
     let currentlyVisibleState = null;
-    if (this.state.editing) {
-      currentlyVisibleState = <EditKegForm keg = {this.selectedKeg}/>
-      buttonText = "Return to Ticket List";
-    } else if(this.state.selectedKeg != null) {
+    // if (this.state.editing) {
+    //   currentlyVisibleState = <EditKegForm keg = {this.selectedKeg}/>
+    //   buttonText = "Return to Ticket List";
+    if(this.state.selectedKeg != null) {
       currentlyVisibleState = <KegDetail keg = {this.state.selectedKeg} onRestock = {this.handleRestock} onBuy = {this.handleBuy} OnClickingEdit = {this.handleEditClick}/>
     } else if (this.state.visibleView === 0) {
       currentlyVisibleState = null;

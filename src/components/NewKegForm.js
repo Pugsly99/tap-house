@@ -1,10 +1,13 @@
 import React from 'react';
 import { v4 } from 'uuid';
 import PropTypes from 'prop-types';
+import ReusableForm from './ReusableForm';
 
 function NewKegForm(props){
   return (
     <>
+      {/* <ReusableForm formSubmissionHandler = {handleNewKegFormSubmission} 
+      buttonText="Help!"/> */}
       <form onSubmit = {handleNewKegFormSubmission}>
         <label from="name">Keg Name: </label>
         <input
