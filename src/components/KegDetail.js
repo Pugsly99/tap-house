@@ -19,7 +19,7 @@ function KegDetail(props){
       <h3>{keg.brand}</h3>
       <h3>{keg.alcoholContent}%</h3>
       <h3>{stockMessage} Pints</h3> 
-      <button type = "button" onClick = {props.onRestock} className = "btn btn-primary"> Restock </button>
+      <button type = "button" onClick = {props.onRestock} className = "btn btn-primary"> Add Another of this Keg </button>
       <button hidden = {keg.quantity === 0} type = "button" onClick = {props.onBuy} className = "btn btn-secondary">Buy</button>
       <button onClick = { props.onClickingEdit }> Update Keg </button>
     </>

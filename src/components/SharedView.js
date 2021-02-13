@@ -59,7 +59,7 @@ class SharedView extends React.Component {
 
   handleRestock = () => {
     const quantityOfKeg = this.state.selectedKeg.quantity;
-    const restockedKeg = {...this.state.selectedKeg, quantity: (quantityOfKeg + 1)};
+    const restockedKeg = {...this.state.selectedKeg, quantity: (quantityOfKeg + 124)};
     const newMasterList = this.state.masterKegList.filter(keg => keg.id !== this.state.selectedKeg.id).concat(restockedKeg);
     this.setState({selectedKeg: restockedKeg, masterKegList: newMasterList});
   }
