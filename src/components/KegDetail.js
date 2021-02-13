@@ -21,6 +21,7 @@ function KegDetail(props){
       <h3>{stockMessage} Pints</h3> 
       <button type = "button" onClick = {props.onRestock} className = "btn btn-primary"> Restock </button>
       <button hidden = {keg.quantity === 0} type = "button" onClick = {props.onBuy} className = "btn btn-secondary">Buy</button>
+      <button onClick = { props.onClickingEdit }> Update Keg </button>
     </>
   );
 }
@@ -28,7 +29,8 @@ function KegDetail(props){
 KegDetail.protoTypes = {
   keg: PropTypes.object,
   onRestock: PropTypes.func,
-  onBuy: PropTypes.func
+  onBuy: PropTypes.func,
+  onClickingEdit: PropTypes.func
 }
 
 export default KegDetail;

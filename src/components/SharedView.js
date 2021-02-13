@@ -2,6 +2,7 @@ import React from 'react';
 import NewKegForm from  './NewKegForm';
 import KegList from './KegList';
 import KegDetail from './KegDetail';
+import EditKegForm from './EditKegForm';
 
 class SharedView extends React.Component {
 
@@ -10,7 +11,8 @@ class SharedView extends React.Component {
     this.state = {
       visibleView: 0,
       masterKegList: [],
-      selectedKeg: null
+      selectedKeg: null,
+      editing: false
     };
   }
 
@@ -40,6 +42,10 @@ class SharedView extends React.Component {
     }
   }
 
+  handleEditClick = () => {
+    this.setState({editing: true});
+  }
+
   handleAddingNewKegToList = (newKeg) => {
     const newMasterKegList = this.state.masterKegList.concat(newKeg);
     this.setState({masterKegList: newMasterKegList,
@@ -67,8 +73,11 @@ class SharedView extends React.Component {
 
   render(){
     let currentlyVisibleState = null;
-    if (this.state.selectedKeg != null) {
-      currentlyVisibleState = <KegDetail keg = {this.state.selectedKeg} onRestock = {this.handleRestock} onBuy = {this.handleBuy}/>
+    if (this.state.editing) {
+      currentlyVisibleState = <EditKegForm keg = {this.selectedKeg}/>
+      buttonText = "Return to Ticket List";
+    } else if(this.state.selectedKeg != null) {
+      currentlyVisibleState = <KegDetail keg = {this.state.selectedKeg} onRestock = {this.handleRestock} onBuy = {this.handleBuy} OnClickingEdit = {this.handleEditClick}/>
     } else if (this.state.visibleView === 0) {
       currentlyVisibleState = null;
     } else if (this.state.visibleView === 1) {
